@@ -2,8 +2,8 @@ password = input("Enter a password: ")
 
 letterLower = False
 letterUpper = False
-numbers = False
-special_char = False
+number = False
+specialChar = False
 
 if 6 <= len(password) <= 16:
     for char in password:
@@ -12,11 +12,11 @@ if 6 <= len(password) <= 16:
         elif char.isupper():
             letterUpper = True
         elif char.isdigit():
-            numbers = True
+            number = True
         elif char in "$#@":
-            special_char = True
+            specialChar = True
 
-    if letterLower and letterUpper and numbers and special_char:
+    if letterLower and letterUpper and number and specialChar:
         print("Valid password")
     else:
         print("Invalid password")
