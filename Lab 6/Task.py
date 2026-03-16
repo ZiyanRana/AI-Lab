@@ -15,9 +15,24 @@ tree = {
     'L': []
 }
 
-def dfs_stack(graph, start, goal):
+def dfsStack(graph, start, goal):
     visited = set()
     stack = [start]
     
     while stack:
+        vertex = stack.pop()
         
+        if vertex not in visited:
+            print(vertex, end=" ")
+            visited.add(vertex)
+            
+            if vertex == goal:
+                print("\nGoal node G reached!")
+                return
+            
+            for neighbour in reversed(graph[vertex]):
+                if neighbour not in visited:
+                    stack.append(neighbour)
+
+print("DFS Search (using Stack) from A to G:")
+dfsStack(tree, 'A', 'G')
