@@ -15,4 +15,5 @@ while True:
     elif choice == 3:
         print("Queue:", queue)
     elif choice == 4:
+        print("Exiting queue...")
         break
